@@ -16,4 +16,9 @@ MongoClient.connect('mongodb://localhost:27017', (err,client) => {
             console.log('Unable to delete ',err);
         }
     });
+    adminDb.collection('Users').findOneAndDelete({name:'Andrew'}).then(()=>{}, (err)=>{
+        if(err){
+            console.log('Unable to delete ',err);
+        }
+    });
 });
